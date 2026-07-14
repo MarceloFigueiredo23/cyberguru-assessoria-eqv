@@ -29,13 +29,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .blend-progress { position: fixed; top: 0; left: 0; right: 0; height: 5px; z-index: 200; background: linear-gradient(90deg, #fff, #ffd0d0); transform-origin: left; transform: scaleX(var(--slide-progress, 0.14)); transition: transform 0.4s var(--ease); }
+    .blend-progress { position: fixed; top: 0; left: 0; right: 0; height: 5px; z-index: 200; background: linear-gradient(90deg, #fff, #ffd0d0); transform-origin: left; transform: scaleX(var(--slide-progress, 0.1)); transition: transform 0.4s var(--ease); }
     .slide-logo { position: absolute; top: 1.25rem; left: 1.5rem; z-index: 10; }
     .slide-logo svg { height: clamp(22px, 3.5vh, 30px); width: auto; display: block; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35)); }
 
     .nav-dots {
       position: fixed; right: 1rem; top: 50%; transform: translateY(-50%);
-      z-index: 100; display: flex; flex-direction: column; gap: 0.5rem;
+      z-index: 100; display: flex; flex-direction: column; gap: 0.45rem;
     }
     .nav-dots a {
       width: 10px; height: 10px; border-radius: 50%;
@@ -104,7 +104,7 @@
       box-shadow: 0 12px 40px rgba(80, 0, 0, 0.25);
     }
 
-    #capa .inner { text-align: center; }
+    #capa .inner, #eqv-capa .inner { text-align: center; }
     .v4-mark { font-family: Outfit, sans-serif; font-weight: 800; font-size: 1.75rem; letter-spacing: 0.06em; }
     .v4-mark span { color: #ffe0e0; }
     .capa-partnership {
@@ -112,8 +112,8 @@
       margin: 1.25rem 0 0.75rem; font-size: 1.05rem; color: var(--muted);
     }
     .capa-partnership .x { opacity: 0.5; }
-    #capa h1 { font-size: clamp(2.3rem, 6.2vh, 3.5rem); margin-bottom: 0.85rem; }
-    #capa h1 em { font-style: normal; color: #ffe8e8; }
+    #capa h1, #eqv-capa h1 { font-size: clamp(2.3rem, 6.2vh, 3.5rem); margin-bottom: 0.85rem; }
+    #capa h1 em, #eqv-capa h1 em { font-style: normal; color: #ffe8e8; }
     .capa-sub { font-size: clamp(1.05rem, 2vh, 1.2rem); color: var(--muted); max-width: 620px; margin: 0 auto 1.35rem; }
     .capa-badge {
       display: inline-block; padding: 0.5rem 1.15rem; border-radius: 999px;
@@ -142,29 +142,6 @@
       background: rgba(255,255,255,0.1);
     }
 
-    .model-card { position: relative; }
-    .model-card.featured {
-      border-color: rgba(255,255,255,0.55);
-      background: rgba(255,255,255,0.2);
-      box-shadow: 0 8px 28px rgba(80,0,0,0.18);
-    }
-    .model-tag {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: #ffe8e8; margin-bottom: 0.45rem;
-    }
-    .model-card h3 { font-size: 1.25rem; margin-bottom: 0.35rem; }
-    .model-card .who {
-      font-size: 0.95rem; color: #fff; font-weight: 600; margin-bottom: 0.55rem;
-    }
-    .model-card ul { list-style: none; margin-top: 0.5rem; }
-    .model-card ul li {
-      font-size: 0.9rem; color: var(--muted); padding: 0.28rem 0 0.28rem 1.35rem; position: relative;
-    }
-    .model-card ul li svg {
-      position: absolute; left: 0; top: 0.4rem; width: 14px; height: 14px;
-      stroke: #fff; fill: none; stroke-width: 2.2;
-    }
-
     .list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-top: 0.85rem; }
     .list li { font-size: 0.98rem; color: var(--muted); padding-left: 1.55rem; position: relative; }
     .list li svg {
@@ -183,7 +160,8 @@
     .flow-step span { font-size: 0.82rem; color: var(--muted); }
     .flow-arrow { align-self: center; color: rgba(255,255,255,0.5); font-size: 1.15rem; }
 
-    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.05rem; }
+    .plans { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1.05rem; max-width: 520px; }
+    .plans.plans-2 { grid-template-columns: 1fr 1fr; max-width: none; }
     .plan {
       border-radius: 18px; padding: 1.2rem 1.25rem;
       border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.12);
@@ -199,6 +177,13 @@
     .plan ul li { font-size: 0.88rem; color: var(--muted); padding: 0.22rem 0 0.22rem 1.15rem; position: relative; }
     .plan ul li::before { content: "·"; position: absolute; left: 0; color: #fff; font-weight: 700; }
 
+    .pay-box {
+      margin-top: 0.85rem; padding: 0.95rem 1.1rem; border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,0.45); background: rgba(0,0,0,0.15);
+      font-size: 0.95rem; color: var(--muted);
+    }
+    .pay-box strong { color: #fff; }
+
     .cta-box {
       margin-top: 1.05rem; padding: 1.05rem 1.2rem; border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.14);
@@ -213,10 +198,10 @@
       border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; color: rgba(255,255,255,0.75);
     }
     .progress-wrap { flex: 1; max-width: 220px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin: 0 1rem; }
-    .progress-fill { height: 100%; background: #fff; border-radius: 2px; width: 14%; transition: width 0.4s var(--ease); }
+    .progress-fill { height: 100%; background: #fff; border-radius: 2px; width: 10%; transition: width 0.4s var(--ease); }
 
     @media (max-width: 700px) {
-      .grid-3, .grid-2, .grid-4, .plans { grid-template-columns: 1fr; }
+      .grid-3, .grid-2, .grid-4, .plans.plans-2 { grid-template-columns: 1fr; }
       .nav-arrow--next { right: 1rem; }
       .slide-logo { left: 1rem; top: 1rem; }
       .flow-arrow { display: none; }
@@ -230,11 +215,14 @@
   <nav class="nav-dots" aria-label="Slides">
     <a href="#" data-slide="1" class="active" title="Capa"></a>
     <a href="#" data-slide="2" title="Contexto"></a>
-    <a href="#" data-slide="3" title="Modelos"></a>
-    <a href="#" data-slide="4" title="Entrega"></a>
-    <a href="#" data-slide="5" title="Escopo"></a>
-    <a href="#" data-slide="6" title="Operação"></a>
-    <a href="#" data-slide="7" title="Investimento"></a>
+    <a href="#" data-slide="3" title="Entrega"></a>
+    <a href="#" data-slide="4" title="Escopo"></a>
+    <a href="#" data-slide="5" title="Operação"></a>
+    <a href="#" data-slide="6" title="Investimento Assessoria"></a>
+    <a href="#" data-slide="7" title="EQV"></a>
+    <a href="#" data-slide="8" title="EQV modelo"></a>
+    <a href="#" data-slide="9" title="EQV operação"></a>
+    <a href="#" data-slide="10" title="Investimento EQV"></a>
   </nav>
 
   <button type="button" class="nav-arrow nav-arrow--prev" id="prevBtn" aria-label="Anterior">
@@ -252,7 +240,8 @@
 
   <div class="deck" id="deck">
 
-    <!-- 1 · CAPA -->
+    <!-- ========== BLOCO 1 · ASSESSORIA ========== -->
+
     <section id="capa" class="slide-active" data-slide="1">
       <div class="inner">
         <div class="capa-partnership">
@@ -260,20 +249,19 @@
           <span class="x">×</span>
           <span>Cyberguru</span>
         </div>
-        <h1>Assessoria de Growth<br /><em>ou Empresa Que Vende</em></h1>
-        <p class="capa-sub">Duas formas de operar: a V4 executa com squad completo, ou o time interno executa com consultoria de execução assistida.</p>
+        <h1>Assessoria<br /><em>de Growth</em></h1>
+        <p class="capa-sub">Squad V4 executando mídia, criativo e social — Account, GT, Designer/Copy e Social Media no mesmo ritmo.</p>
         <span class="capa-badge">Proposta comercial · Julho 2026</span>
         <p class="slide-hint">Setas, scroll ou swipe para avançar →</p>
       </div>
     </section>
 
-    <!-- 2 · CONTEXTO -->
     <section id="contexto" data-slide="2">
       <div class="inner glass">
         <p class="eyebrow">Contexto</p>
         <h2>Autoridade no digital<br />pede operação contínua.</h2>
         <div class="gold-line"></div>
-        <p class="lead">A Cyberguru constrói marca e tese no Direito Digital. Para isso virar presença previsível — mídia, criativo e social no mesmo ritmo — precisa de um modelo claro: quem executa e quem decide.</p>
+        <p class="lead">A Cyberguru constrói marca e tese no Direito Digital. Para isso virar presença previsível, mídia, criativo e social precisam rodar no mesmo ciclo — com quem executa claro.</p>
         <div class="grid-3">
           <article class="card">
             <div class="card-num">01</div>
@@ -282,79 +270,24 @@
           </article>
           <article class="card">
             <div class="card-num">02</div>
-            <h3>Time interno ativo</h3>
-            <p>Quando o design e a estratégia já existem dentro de casa, o modelo de parceria muda.</p>
+            <h3>Ritmo único</h3>
+            <p>Ads, criativo e feed no mesmo funil — sem frentes desconectadas.</p>
           </article>
           <article class="card">
             <div class="card-num">03</div>
-            <h3>Dois caminhos</h3>
-            <p>Ou a V4 assume a execução, ou o time interno executa com a V4 assistindo.</p>
+            <h3>V4 executa</h3>
+            <p>Squad alocado produz. Vocês priorizam, aprovam e acompanham resultado.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 3 · MODELOS (diferencial) -->
-    <section id="modelos" data-slide="3">
-      <div class="inner">
-        <div class="glass" style="margin-bottom:0.75rem; padding-bottom:1rem;">
-          <p class="eyebrow">Escolha o modelo</p>
-          <h2>Assessoria executa.<br />EQV assiste a execução.</h2>
-          <div class="gold-line"></div>
-          <p class="lead">A diferença não é o tema (mídia, criativo, social). É quem coloca a mão na operação no dia a dia.</p>
-        </div>
-        <div class="grid-2" style="margin-top:0;">
-          <article class="card model-card featured">
-            <div class="model-tag">Visão 1 · Recomendada</div>
-            <h3>Assessoria de Growth</h3>
-            <p class="who">A V4 executa por vocês.</p>
-            <p style="font-size:0.92rem; color:var(--muted);">Squad alocado entrega campanhas, criativos e social. Vocês aprovam, priorizam e acompanham resultado.</p>
-            <ul>
-              <li>
-                <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
-                ACC orquestra estratégia e demanda
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
-                GT, Designer/Copy e Social produzem
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
-                Ideal quando o foco interno é o negócio
-              </li>
-            </ul>
-          </article>
-          <article class="card model-card">
-            <div class="model-tag">Visão 2 · Alternativa</div>
-            <h3>Empresa Que Vende</h3>
-            <p class="who">Vocês executam. A V4 assiste.</p>
-            <p style="font-size:0.92rem; color:var(--muted);">Consultoria de acompanhamento + execução assistida. O time interno opera; a V4 prioriza, treina e acompanha.</p>
-            <ul>
-              <li>
-                <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
-                Capacidade fica no time da Cyberguru
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
-                Squad V4 guia conteúdo, mídia e ritmo
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
-                Ideal com design e operação internos fortes
-              </li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4 · ENTREGA -->
-    <section id="entrega" data-slide="4">
+    <section id="entrega" data-slide="3">
       <div class="inner glass">
-        <p class="eyebrow">Squad da Assessoria</p>
+        <p class="eyebrow">O que a V4 entrega</p>
         <h2>Quatro frentes,<br />uma operação.</h2>
         <div class="gold-line"></div>
-        <p class="lead">Na Assessoria, estes profissionais entregam. No EQV, as mesmas frentes existem como orientação assistida ao time interno.</p>
+        <p class="lead">Profissionais alocados para executar o dia a dia da presença digital da Cyberguru.</p>
         <div class="grid-4">
           <article class="card">
             <span class="card-role">Account Manager</span>
@@ -380,8 +313,7 @@
       </div>
     </section>
 
-    <!-- 5 · ESCOPO -->
-    <section id="escopo" data-slide="5">
+    <section id="escopo" data-slide="4">
       <div class="inner">
         <div class="grid-2">
           <div class="glass">
@@ -432,21 +364,16 @@
                 <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
                 Assessoria de imprensa ou jurídico
               </li>
-              <li>
-                <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
-                No EQV: execução hands-on pela V4
-              </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6 · OPERAÇÃO -->
-    <section id="operacao" data-slide="6">
+    <section id="operacao" data-slide="5">
       <div class="inner glass">
         <p class="eyebrow">Como opera</p>
-        <h2>Mesmo ciclo.<br />Papéis diferentes.</h2>
+        <h2>Fluxo mensal,<br />com a V4 executando.</h2>
         <div class="gold-line"></div>
         <div class="flow-row">
           <div class="flow-step">
@@ -464,54 +391,153 @@
           <div class="flow-step">
             <div class="icon">03</div>
             <strong>Execução</strong>
-            <span>Assessoria: V4 · EQV: time interno</span>
+            <span>Squad V4 produz e publica</span>
           </div>
           <span class="flow-arrow">→</span>
           <div class="flow-step">
             <div class="icon">04</div>
             <strong>Review</strong>
-            <span>Leitura de resultado e ajuste</span>
+            <span>Resultado e ajuste juntos</span>
           </div>
         </div>
-        <p class="lead" style="margin-top:1.2rem;">Na Assessoria, a V4 entrega e a Cyberguru aprova. No EQV, a V4 orienta e o time interno entrega, com checkpoints de execução assistida.</p>
+        <p class="lead" style="margin-top:1.2rem;">A Cyberguru aprova e prioriza. A V4 coloca a mão na operação — campanhas, criativos e social.</p>
       </div>
     </section>
 
-    <!-- 7 · INVESTIMENTO -->
-    <section id="investimento" data-slide="7">
+    <section id="investimento" data-slide="6">
       <div class="inner glass">
-        <p class="eyebrow">Investimento</p>
-        <h2>Duas visões.<br />Uma decisão.</h2>
+        <p class="eyebrow">Investimento · Assessoria</p>
+        <h2>Squad completo<br />na operação.</h2>
         <div class="gold-line"></div>
         <div class="plans">
           <article class="plan featured">
-            <div class="plan-label">Assessoria · V4 executa · Recomendado</div>
-            <h3>Squad completo</h3>
-            <p class="plan-sub">ACC + GT + Designer/Copy + Social</p>
+            <div class="plan-label">Assessoria de Growth · Recorrente</div>
+            <h3>ACC + GT + Designer/Copy + Social</h3>
+            <p class="plan-sub">V4 executa · Cyberguru aprova e acompanha</p>
             <div class="plan-price">R$ 6.500 <small>/mês</small></div>
-            <p class="plan-total">Recorrente mensal · operação na V4</p>
+            <p class="plan-total">Fee mensal · operação contínua</p>
             <ul>
-              <li>V4 produz campanhas, criativos e social</li>
-              <li>Vocês aprovam e acompanham resultado</li>
-              <li>Ideal para liberar o time interno</li>
+              <li>Account Manager orquestrando o projeto</li>
+              <li>Mídia paga, criativos e social no mesmo ciclo</li>
+              <li>Checkpoints de alinhamento e resultado</li>
             </ul>
           </article>
-          <article class="plan">
-            <div class="plan-label">EQV · Execução assistida</div>
-            <h3>Empresa Que Vende</h3>
-            <p class="plan-sub">Consultoria + squad assistindo o time</p>
-            <div class="plan-price">R$ 35.000 <small>/semestre</small></div>
-            <p class="plan-total">Âncora 6 meses · líquido R$ 20.000 com cashback EE</p>
+        </div>
+        <div class="cta-box">
+          <h3>Próximo passo · Assessoria</h3>
+          <p>Confirmar o modelo e agendar kickoff até <strong>21 de julho de 2026</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BLOCO 2 · EQV ========== -->
+
+    <section id="eqv-capa" data-slide="7">
+      <div class="inner">
+        <p class="eyebrow">Alternativa</p>
+        <h1>Empresa<br /><em>Que Vende</em></h1>
+        <p class="capa-sub">Se o time interno quiser executar: consultoria de acompanhamento + execução assistida. Vocês fazem. A V4 assiste.</p>
+        <span class="capa-badge">Segunda visão · EQV</span>
+      </div>
+    </section>
+
+    <section id="eqv-modelo" data-slide="8">
+      <div class="inner glass">
+        <p class="eyebrow">O diferencial</p>
+        <h2>EQV não executa<br />por vocês.</h2>
+        <div class="gold-line"></div>
+        <p class="lead">Estrutura, treina e acompanha a execução. Quem coloca a mão no dia a dia é o time da Cyberguru — com a V4 priorizando e assistindo.</p>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-num">01</div>
+            <h3>Consultoria</h3>
+            <p>Prioridades do mês, gargalos e alocação do esforço nos pontos que destravam resultado.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">02</div>
+            <h3>Execução assistida</h3>
+            <p>Squad V4 guia conteúdo, mídia e ritmo — o time interno produz e publica.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">03</div>
+            <h3>Capacidade interna</h3>
+            <p>O conhecimento fica na Cyberguru. Ideal quando design e operação já existem dentro de casa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="eqv-operacao" data-slide="9">
+      <div class="inner glass">
+        <p class="eyebrow">Como opera o EQV</p>
+        <h2>Vocês executam.<br />A V4 assiste.</h2>
+        <div class="gold-line"></div>
+        <div class="flow-row">
+          <div class="flow-step">
+            <div class="icon">01</div>
+            <strong>Diagnóstico</strong>
+            <span>Prioridades do ciclo</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <div class="icon">02</div>
+            <strong>Orientação</strong>
+            <span>V4 define o que fazer</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <div class="icon">03</div>
+            <strong>Execução</strong>
+            <span>Time Cyberguru opera</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <div class="icon">04</div>
+            <strong>Acompanhamento</strong>
+            <span>Review e ajuste assistido</span>
+          </div>
+        </div>
+        <p class="lead" style="margin-top:1.2rem;">Diferente da Assessoria: aqui a V4 não produz campanhas nem peças no lugar de vocês — acompanha e desbloqueia a execução do time interno.</p>
+      </div>
+    </section>
+
+    <section id="investimento-eqv" data-slide="10">
+      <div class="inner glass">
+        <p class="eyebrow">Investimento · EQV</p>
+        <h2>Empresa Que Vende<br />em 6 parcelas.</h2>
+        <div class="gold-line"></div>
+        <div class="plans plans-2">
+          <article class="plan featured">
+            <div class="plan-label">Valor total</div>
+            <h3>Programa EQV</h3>
+            <p class="plan-sub">Consultoria + execução assistida</p>
+            <div class="plan-price">R$ 200.000</div>
+            <p class="plan-total">Investimento total do programa</p>
             <ul>
               <li>Time Cyberguru executa no dia a dia</li>
               <li>V4 prioriza, treina e acompanha</li>
               <li>Capacidade fica dentro de casa</li>
             </ul>
           </article>
+          <article class="plan">
+            <div class="plan-label">Cartão de crédito</div>
+            <h3>6× sem mistério</h3>
+            <p class="plan-sub">Parcelamento no cartão</p>
+            <div class="plan-price">R$ 33.333 <small>/mês</small></div>
+            <p class="plan-total">6× de R$ 33.333,33 · total R$ 200.000</p>
+            <ul>
+              <li>Pagamento em 6 parcelas no cartão</li>
+              <li>Mesmo escopo do programa EQV</li>
+              <li>Alternativa à Assessoria recorrente</li>
+            </ul>
+          </article>
+        </div>
+        <div class="pay-box">
+          <strong>Resumo:</strong> total R$ 200.000 · 6× de R$ 33.333,33 no cartão de crédito.
         </div>
         <div class="cta-box">
           <h3>Próximo passo</h3>
-          <p>Definir se a Cyberguru quer <strong>Assessoria (V4 executa)</strong> ou <strong>EQV (execução assistida)</strong> e confirmar kickoff até <strong>21 de julho de 2026</strong>.</p>
+          <p>Escolher <strong>Assessoria (R$ 6.500/mês, V4 executa)</strong> ou <strong>EQV (R$ 200.000 em 6×, execução assistida)</strong> e confirmar até <strong>21 de julho de 2026</strong>.</p>
         </div>
       </div>
     </section>
@@ -521,7 +547,7 @@
   <footer class="deck-footer">
     <span>Cyberguru × V4 · Assessoria + EQV</span>
     <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
-    <span id="slideCounter">1 / 7</span>
+    <span id="slideCounter">1 / 10</span>
   </footer>
 
   <script>
@@ -531,7 +557,7 @@
       slide.insertBefore(logoTpl.content.cloneNode(true), slide.firstChild);
     });
 
-    const TOTAL = 7;
+    const TOTAL = 10;
     let current = 1;
     const slides = Array.from(document.querySelectorAll("#deck section[id]"));
     const navLinks = document.querySelectorAll(".nav-dots a");
